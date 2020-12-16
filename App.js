@@ -1,22 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View, SafeAreaView } from 'react-native';
+import {
+  } from 'react-native';
+import ViewImageScreen from './app/assets/screens/ViewImageScreen';
+import WelcomeScreen from './app/assets/screens/WelcomeScreen';
+
 
 export default function App() {
-  return (
-    <SafeAreaView style={styles.container}>
-      <Text></Text>
-      <Text numberOfLines={1} >Lorris est une MERDE cette phrase est vraiment super longue mais c'est fait exprès</Text>
-      <StatusBar style="auto" />
-    </SafeAreaView>
-  );
+  return <ViewImageScreen />
+  //return <WelcomeScreen />;
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
