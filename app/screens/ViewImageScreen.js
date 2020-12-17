@@ -7,7 +7,7 @@ function ViewImageScreen(props) {
         <View style={styles.container}>
             <View style={styles.closeIcon}></View>
             <View style={styles.deleteIcon}></View>
-            <Image resizeMode='contain' style={styles.image} source={require('../chair.jpg')}/>
+            <Image resizeMode='contain' style={styles.image} source={require('../assets/chair.jpg')}/>
         </View>
     );
 }
