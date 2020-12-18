@@ -1,8 +1,8 @@
 import { useFormikContext } from 'formik';
 import React from 'react';
-import AppButton from './AppButton';
+import AppButton from '../AppButton';
 
-function AppSumbitButton({ title }) {
+function AppSubmitButton({ title }) {
     const { handleSubmit } = useFormikContext();
     
     return (
@@ -12,4 +12,4 @@ function AppSumbitButton({ title }) {
     );
 }
 
-export default AppSumbitButton;
+export default AppSubmitButton;
