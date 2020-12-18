@@ -2,8 +2,17 @@ import React from 'react';
 import { Image, StyleSheet } from 'react-native';
 import { Formik } from 'formik';
 import AppScreen from '../components/AppScreen';
-import AppTextInput from '../components/AppTextInput';
 import AppButton from '../components/AppButton';
+import * as Yup from 'yup';
+import ErrorMessage from '../components/AppErrorMessage';
+import AppFormField from '../components/AppFormField';
+import AppSumbitButton from '../components/AppSumbitButton';
+
+
+const validationSchema = Yup.object().shape({
+    email: Yup.string().required().email().label("Email"), //pour valider la regex email
+    password: Yup.string().required().min(4).matches().label("Password")
+})
 
 function LoginScreen(props) {
 
@@ -13,30 +22,29 @@ function LoginScreen(props) {
             <Formik
                 initialValues={{ email: '', password: ''}}
                 onSubmit={values => console.log(values)} 
+                validationSchema={validationSchema}
             >
-                { ({ handleChange, handleSubmit }) => (
+                { () => (
                     <>
-                        <AppTextInput
+                        <AppFormField
+                            name="email"
                             icon="email"
                             autoCapitalize="none"
                             autoCorrect={false}
                             keyboardType="email-address"
-                            onChangeText={handleChange("email")}
                             textContentType="emailAddress"
                             placeholder='Email'
                         />
-                        <AppTextInput
+                        <AppFormField
+                            name="password"
                             autoCapitalize="none"
                             autoCorrect={false}
                             icon="lock"
-                            onChangeText={handleChange("password")}
                             placeholder="Password"
                             secureTextEntry
-                            textContentType="Password"
+                            textContentType="password"
                         />
-                        <AppButton 
-                            title="Login" onPress={handleSubmit}
-                        />
+                        <AppSumbitButton title="Login"/>
                     </>
                 )}
             </Formik>
