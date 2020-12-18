@@ -1,22 +1,28 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { View } from 'react-native';
-import {MaterialCommunityIcons} from '@expo/vector-icons';
-import AppButton from './app/components/AppButton';
-import WelcomeScreen from './app/screens/WelcomeScreen';
-import AppCard from './app/components/AppCard';
-import ViewImageScreen from './app/screens/ViewImageScreen'
-import ListingDetailsScreen from './app/screens/ListingDetailsScreen';
-import MessagesScreen from './app/screens/MessagesScreen';
+import React, { useState } from 'react';
+import { Switch, Text, TextInput, View } from 'react-native';
+import AppPicker from './app/components/AppPicker';
 import AppScreen from './app/components/AppScreen';
-import AppIcon from './app/components/AppIcon';
-import AppListItem from './app/components/AppListItem';
-import AccountScreen from './app/screens/AccountScreen';
-import ListingScreen from './app/screens/ListingScreen';
+import AppTextInput from './app/components/AppTextInput';
 
+const categories = [
+  { label: "Furniture", value: 1},
+  { label: "Clothing", value: 2},
+  { label: "Watches", value: 3},
+]
 
 export default function App() {
+  const [category, setCategory] = useState();
+  
   return (
-    <ListingScreen/>
+    
+    <AppScreen >
+      <AppPicker 
+        selectedItem={category}
+        onSelectItem={(item) => setCategory(item)}
+        items={categories}
+        placeholder='Category' 
+        icon="apps"/>
+      <AppTextInput placeholder='email' icon="email"/>
+    </AppScreen>
   );
 }
