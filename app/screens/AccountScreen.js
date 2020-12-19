@@ -5,23 +5,26 @@ import { StyleSheet, View, FlatList } from 'react-native';
 import colors from '../config/colors';
 import AppIcon from '../components/AppIcon';
 import AppListItemSeparator from '../components/AppListItemSeparator';
+import routes from '../navigation/routes';
 
 const menuItems = [
     { title: "My Listings",
-      icon: {
-          name: "format-list-bulleted",
-          backgroundColor: colors.primary,
-      }
+        icon: {
+            name: "format-list-bulleted",
+            backgroundColor: colors.primary,
+        },
+        targetScreen: routes.MESSAGES
     },
     { title: "My Messages",
-      icon: {
-          name: "email",
-          backgroundColor: colors.secondary,
-      }
+        icon: {
+            name: "email",
+            backgroundColor: colors.secondary,
+        },
+        targetScreen: routes.MESSAGES
     }
 ]
 
-function AccountScreen(props) {
+function AccountScreen({ navigation }) {
     return (
         <AppScreen style={styles.screen}>
             <View style={styles.container}>    
@@ -42,6 +45,7 @@ function AccountScreen(props) {
                             IconComponent={
                                 <AppIcon name={item.icon.name} backgroundColor={item.icon.backgroundColor}/>
                             }
+                            onPress={() => navigation.navigate(item.targetScreen)}
                         />
                     }
                 />
