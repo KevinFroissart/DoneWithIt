@@ -2,7 +2,7 @@ import React from 'react';
 import { Image, StyleSheet } from 'react-native';
 import * as Yup from 'yup';
 
-import AppScreen from './AppScreen';
+import AppScreen from '../components/AppScreen';
 import { AppForm, AppFormField, AppSubmitButton } from '../components/forms'
 
 

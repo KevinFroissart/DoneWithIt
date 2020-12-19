@@ -17,8 +17,8 @@ function AppListItem({ title, subTitle, image, IconComponent, onPress, renderRig
                     {IconComponent}
                     {image && <Image style={styles.image} source={image}/>}
                     <View style={styles.detailsConaitner}>
-                        <AppText style={styles.title}> numberOfLines={1} {title}</AppText>
-                        {subTitle && <AppText style={styles.subTitle}> numberOfLines={2} {subTitle}</AppText>}
+                        <AppText style={styles.title} numberOfLines={1}>{title}</AppText>
+                        {subTitle && <AppText style={styles.subTitle}numberOfLines={2}>{subTitle}</AppText>}
                     </View>
                     <MaterialCommunityIcons color={colors.medium} name="chevron-right" size={25}/>
                 </View>

@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from 'react';
-import AppScreen from './app/components/AppScreen';
+import React from "react";
+import { NavigationContainer } from "@react-navigation/native";
+import AuthNavigator from "./app/navigation/AuthNavigator";
+import navigationTheme from "./app/navigation/navigationTheme";
+import AppNavigator from "./app/navigation/AppNavigator";
 
-import AppImageInputList from './app/components/AppImageInputList';
-import ListingEditScreen from './app/screens/ListingEditScreen';
-
-export default function App() {  
-
-
+export default function App() {
   return (
-    <ListingEditScreen />
+    <NavigationContainer theme={navigationTheme}>
+      <AppNavigator/>
+    </NavigationContainer>
   );
 }
