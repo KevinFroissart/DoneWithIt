@@ -1,3 +1,6 @@
+## Download the APK
+<a href="DoneWithIt_1.0.1.apk" download>Click to Download</a>
+
 ## Welcome to GitHub Pages
 
 You can use the [editor on GitHub](https://github.com/KevinFroissart/DoneWithIt/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
