@@ -3,7 +3,7 @@ import authStorage from '../auth/storage';
 import cache from '../utility/cache';
 
 const apiClient = create({
-    baseURL: 'http://192.168.1.51:9000/api'
+    baseURL: 'http://192.168.1.57:9000/api'
 })
 
 apiClient.get('/listings').then(response => {

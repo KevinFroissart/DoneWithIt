@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { FlatList, StyleSheet } from 'react-native';
 import AppCard from '../components/AppCard';
 import AppScreen from '../components/AppScreen';
@@ -12,6 +12,7 @@ import useApi from '../hooks/useApi';
 
 function ListingScreen({ navigation }) {
     const getListingsApi = useApi(listingsApi.getListings);
+    const [refreshing, setRefreshing ] = useState(false);
 
     useEffect(() => {
         getListingsApi.request();
@@ -28,6 +29,8 @@ function ListingScreen({ navigation }) {
                 <FlatList 
                     data={getListingsApi.data}
                     keyExtractor={data => data.id.toString()}
+                    refreshing={refreshing}
+                    onRefresh={() => console.log()}
                     renderItem={({ item }) =>
                         <AppCard 
                             title={item.title} 
