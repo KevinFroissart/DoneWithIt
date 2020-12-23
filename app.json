@@ -19,6 +19,9 @@
     "ios": {
       "supportsTablet": true
     },
+    "notification": {
+      "iosDisplayInForeground" : true
+    },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./app/assets/adaptive-icon.png",
